@@ -1,0 +1,19 @@
+﻿{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Address List</h1>
+
+    {% if address_list %}
+    <ul>
+
+      {% for address in address_list %}
+      <li>
+        <a href="{{ address.get_absolute_url }}">{{ address.key }}</a> ({{address.get_addrstatus_display}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no addresses in the library.</p>
+    {% endif %}       
+{% endblock %}

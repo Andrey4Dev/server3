@@ -1,0 +1,22 @@
+﻿{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Home</h1>
+
+  <p>Welcome to <em>Server 3 Applcation</em></p>
+
+<h2>Common information</h2>
+
+  <p>The system contains following record counts:</p>
+  <ul>
+    <li><strong>Customers:</strong> {{ num_customers }}</li>
+    <li><strong>Addresses:</strong> {{ num_addresses }}</li>
+    <li><strong>Blockchains:</strong> {{ num_blockchains }}</li>
+    <li><strong>Watchlist records:</strong> {{ num_watchlists }}</li>
+    <li><strong>Operations records:</strong> {{ num_operations }}</li>
+    <li><strong>Log records:</strong> {{ num_logs }}</li>
+  </ul>
+
+<p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
+{% endblock %}

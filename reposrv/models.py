@@ -42,6 +42,10 @@ class Blockchain(models.Model):
     class Meta:
         ordering = ["name"]
 
+    def get_absolute_url(self):
+        return reverse('blockchain-detail', args=[str(self.id)])
+
+
 class Address(models.Model):
     """
     Address model.
@@ -71,6 +75,10 @@ class Address(models.Model):
 
     class Meta:
         ordering = ["key"]
+
+    def get_absolute_url(self):
+        return reverse('address-detail', args=[str(self.id)])
+
 
 class Watchlist(models.Model):
     """

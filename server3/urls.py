@@ -30,7 +30,11 @@ urlpatterns += [
 from django.views.generic import RedirectView
 
 urlpatterns += [
-    path('', RedirectView.as_view(url='/creposrv/', permanent=True)),
+    path('', RedirectView.as_view(url='/reposrv/', permanent=True)),
+]
+
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 # Используйте static() чтобы добавить соотношения для статических файлов
@@ -39,3 +43,4 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

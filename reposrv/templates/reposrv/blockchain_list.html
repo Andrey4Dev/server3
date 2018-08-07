@@ -1,0 +1,19 @@
+﻿{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Blockchain List</h1>
+
+    {% if blockchain_list %}
+    <ul>
+
+      {% for blockchain in blockchain_list %}
+      <li>
+        <a href="{{ blockchain.get_absolute_url }}">{{ blockchain.name }}</a> ({{blockchain.get_object_count}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no blockchain.</p>
+    {% endif %}       
+{% endblock %}

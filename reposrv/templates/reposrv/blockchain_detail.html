@@ -1,0 +1,17 @@
+﻿{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Blockchain: {{ blockchain.name }}</h1>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Addreses:</h4>
+
+    {% for address in blockchain.address_set.all %}
+    <hr>
+    <p class="{% if copy.status == 'u' %}text-success{% elif copy.status == 'w' %}text-danger{% else %}text-warning{% endif %}">{{ address.get_addrstatus_display }}</p>
+    <p><strong>Key:</strong> {{address.key}}</p>
+    <p class="text-muted"><strong>Id:</strong> {{address.id}}</p>
+    {% endfor %}
+  </div>
+
+{% endblock %}

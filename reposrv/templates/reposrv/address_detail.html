@@ -1,0 +1,11 @@
+﻿{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Address: {{ address.key }}</h1>
+
+  <p><strong>Key:</strong> <a href="">{{ address.key }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Customer:</strong> {{ address.display_customer }}</p>
+  <p><strong>Blockchain:</strong> {{ address.display_blockchain }}</p> 
+  <p><strong>Status:</strong> {{ address.get_addrstatus_display }}</p>  
+
+{% endblock %}
