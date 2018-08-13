@@ -63,10 +63,13 @@ class Address(models.Model):
     addrstatus = models.CharField(max_length=1, choices=ADDR_STATUS, blank=True, default='u', help_text='Address current status')
 
     def __str__(self):
-        return '%s(%s)' % (self.customer.display_fullname,self.blockchain.name)
+        return '%s(%s)' % (self.key,self.blockchain.name)
 
     def display_customer(self):
-        return '%s %s' % (self.customer.lastname,self.customer.firstname)
+        if self.customer is not None:
+            return '%s %s' % (self.customer.lastname,self.customer.firstname)
+        else:
+            return None
     display_customer.short_description = 'Customer'
 
     def display_blockchain(self):
